@@ -22,8 +22,8 @@ function App() {
             <Route path='/' element={<Home copy={copy} setCopy={setCopy} />}/>
             <Route  element={<><ProtectedRoute/></>}>
               {/* <Route path={`/${id}`}  element={<HomeId/>} /> */}
-              <Route path={`/${id}/create-blog`} element={<CreateBlog/>}/>
-              <Route path={`/${id}/display`} element={<Display />}/>
+              <Route path={`/:user/create-blog`} element={<CreateBlog/>}/>
+              <Route path={`/:user/display/:id`} element={<Display />}/>
             </Route>
           </Routes>
     </>

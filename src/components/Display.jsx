@@ -4,9 +4,11 @@ import { database } from "../firebaseConfig"
 import { getDoc,doc,collection, addDoc, getDocs } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useAuth } from "../AuthContext/Auth"
+import { useParams } from "react-router"
 
 export default function Display(){
-    const docRef=doc(database,'blog',localStorage.getItem('tempId'))
+    const {id}=useParams()
+    const docRef=doc(database,'blog',id)
     const commentRef=collection(database,'comment')
     // const collectionRef=collection(database,'comment')
     const [storeBlog,setStoreBlog]=useState([])

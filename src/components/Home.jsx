@@ -61,9 +61,10 @@ export default function Home({copy,setCopy}){
                         {blogs.map((blog,id)=>{
                             return(
                                 <div role="button" onClick={()=>{
-                                    localStorage.setItem('tempId',blog.id)
+                                    // localStorage.setItem('tempId',blog.id)
+
                                     if(currentUser){
-                                        navigate(`/${currentUser.user.uid}/display`)
+                                        navigate(`/${currentUser.user.uid}/display/${blog.id}`)
                                     }
                                     else{
                                         signin()

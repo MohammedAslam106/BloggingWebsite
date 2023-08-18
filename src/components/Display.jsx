@@ -7,8 +7,8 @@ import { useAuth } from "../AuthContext/Auth"
 import { useParams } from "react-router"
 
 export default function Display(){
-    const {id}=useParams()
-    const docRef=doc(database,'blog',id)
+    const param=useParams()
+    const docRef=doc(database,'blog',param.id)
     const commentRef=collection(database,'comment')
     // const collectionRef=collection(database,'comment')
     const [storeBlog,setStoreBlog]=useState([])
@@ -22,7 +22,7 @@ export default function Display(){
             name:currentUser.user.displayName,
             img:currentUser.user.photoURL,
             message:comment,
-            blogId:localStorage.getItem('tempId')
+            blogId:param.id
         }).then((res)=>{
             console.log(res)
             window.location.reload()
@@ -76,8 +76,8 @@ export default function Display(){
                     </ul>
                     <div className=" mt-10">
                         {comments.map((commentor,id)=>{
-                            // console.log(commentor)
-                            if(commentor.data.blogId===localStorage.getItem('tempId')){
+                            console.log(param.id)
+                            if(commentor.data.blogId===param.id){
                                 console.log('is it rendering')
                             return (
                                 <div className=" p-5 border rounded my-5" key={id}>

@@ -38,9 +38,10 @@ export default function Footer({setCopy}){
                 <div>
                     <h2 className=" font-extrabold">Social</h2>
                     <div className=" float-right flex flex-col justify-center items-center gap-8 mt-5">
-                        <TbBrandFacebook className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/>
-                        <TbBrandGithub className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/>
-                        <TbBrandLinkedin className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/> 
+                        <a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100041960631732"><TbBrandFacebook className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/></a>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/MohammedAslam106"><TbBrandGithub className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/></a>
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mohammed-aslam-152b52217/"><TbBrandLinkedin className=" hover:bg-[lightyellow] hover:text-[#1d2b34] border border-[lightyellow] rounded-full p-3 " size={40}/> </a>
+                        
                     </div>
                 </div>
                 

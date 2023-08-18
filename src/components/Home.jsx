@@ -51,7 +51,7 @@ export default function Home({copy,setCopy}){
     return(
         <>
             <Navbar/>
-            {copy && <div style={{left:'calc(50% - 70px)',animation:'backInDown', animationDuration:'0.5s',animationDirection:'forwords'}} className=" text-white z-20 fixed top-2 right-1/2 bg-gray-700 w-44 flex justify-center gap-2 p-8 py-3  font-semibold">
+            {copy && <div style={{left:'calc(50% - 88px)',animation:'backInDown', animationDuration:'0.5s',animationDirection:'forwords'}} className=" text-white z-20 fixed top-2 right-1/2 bg-gray-700 w-44 flex justify-center gap-2 p-8 py-3  font-semibold">
                 Copied
                 <TiTick size={25} className=" border border-gray-50 p-1 rounded-full"/>
             </div>}

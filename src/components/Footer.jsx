@@ -1,19 +1,20 @@
+import { toast } from "react-hot-toast";
 import { TbBrandFacebook, TbBrandGithub, TbBrandLinkedin, TbLocation, TbMail, TbPhone } from "react-icons/tb";
 
-export default function Footer({setCopy}){
+export default function Footer(){
     return(
         <>
-            
             <div id="footer" className=" mb-auto px-20 sm:px-4 py-8  bg-[#1d2b34]  text-[lightyellow]">
                 <div className=" my-5 flex flex-wrap justify-between items-">
                 <div className=" relative">
                     <h2 className=" font-extrabold">Details</h2>
                     <ul className=" line-effect">
                         <li className=" w-fit">
-                            <div onClick={()=>navigator.clipboard.writeText('9482599734').then(()=>{
-                                    setCopy(true)
-                                    setTimeout(()=>setCopy(false),1500)
-                                })} className=" flex items-center gap-2 cursor-pointer">
+                            <div onClick={()=>{
+                                navigator.clipboard.writeText('9482599734')
+                                toast.success('Copied successfully!')
+                            }} 
+                                className=" flex items-center gap-2 cursor-pointer">
                                 <TbPhone size={15}/>
                                 <p  >
                                     +91-9482599734

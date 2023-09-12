@@ -8,6 +8,7 @@ export const useAuth=()=>{
 }
 
 
+// eslint-disable-next-line react/prop-types
 export function AuthProvider({children}){
     useEffect(()=>{
         const user=JSON.parse(localStorage.getItem('blogUser'))

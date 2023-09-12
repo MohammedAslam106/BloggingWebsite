@@ -35,9 +35,11 @@ export default function Navbar(){
         <>
             <div className=" z-10 fixed top-0 bg-[lightyellow] w-full px-10 py-5 flex sm:justify-center justify-between items-center">
                 <div className=' sm:w-full flex justify-center sm:justify-between items-center gap-20'>
-                    <a href="/"><TbHome onClick={()=>{
+                    <a href="/">
+                        <TbHome onClick={()=>{
                         localStorage.removeItem('tempId')
-                    }} className='  text-red-400 cursor-pointer' size={35}/></a>
+                    }} className='  text-red-400 cursor-pointer' size={35}/>
+                    </a>
                     <div onMouseOver={(e)=>{
                             e.preventDefault()
                             setShowBar(true)
@@ -85,7 +87,9 @@ export default function Navbar(){
                         }else{
                             navigate(`/${currentUser.user.uid}/create-blog`)
                         }
-                    }} className=' font-semibold sm:hidden bg-red-400 px-10 py-5 border text-white shadow-sm hover:border-red-500 hover:opacity-90'>Creat Blog</button>
+                    }} className=' font-semibold sm:hidden bg-red-400 px-10 py-5 border text-white shadow-sm hover:border-red-500 hover:opacity-90'>
+                        Creat Blog
+                    </button>
                 </div>
             </div>
             <Modal isOpen={isOpen} closeModal={()=>setIsOpen(false)}>

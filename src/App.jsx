@@ -15,11 +15,10 @@ function App() {
   // const {currentUser}=useAuth()
   const id=JSON.parse(localStorage.getItem('blogUser'))?.user.uid
   console.log(id)
-  const [copy,setCopy]=useState(false)
   return (
     <>
           <Routes>
-            <Route path='/' element={<Home copy={copy} setCopy={setCopy} />}/>
+            <Route path='/' element={<Home />}/>
             <Route  element={<><ProtectedRoute/></>}>
               {/* <Route path={`/${id}`}  element={<HomeId/>} /> */}
               <Route path={`/:user/create-blog`} element={<CreateBlog/>}/>

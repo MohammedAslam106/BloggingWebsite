@@ -5,13 +5,12 @@ import { database } from "../firebaseConfig";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../AuthContext/Auth";
-import { TiTick } from "react-icons/ti";
 import 'animate.css';
 import Modal from "./Modal";
 
 
 // eslint-disable-next-line react/prop-types
-export default function Home({copy,setCopy}){
+export default function Home(){
     const collectionRef=collection(database,'blog')
     const catRef=collection(database,'category')
     const [blogs,setBlogs]=useState([])
@@ -41,20 +40,9 @@ export default function Home({copy,setCopy}){
         getCategories()
     },[])
 
-    useEffect(()=>{
-        if(copy){
-            window.document.querySelector('body').classList.add('copy')
-        }else{
-            window.document.querySelector('body').classList.remove('copy')
-        }
-    },[copy])
     return(
         <>
             <Navbar/>
-            {copy && <div style={{left:'calc(50% - 88px)',animation:'backInDown', animationDuration:'0.5s',animationDirection:'forwords'}} className=" text-white z-20 fixed top-2 right-1/2 bg-gray-700 w-44 flex justify-center gap-2 p-8 py-3  font-semibold">
-                Copied
-                <TiTick size={25} className=" border border-gray-50 p-1 rounded-full"/>
-            </div>}
                 <div className=" mt-32 px-20 sm:px-5 pb-20 min-h-[100vh] font">
                     {/* <h1 className=" text-6xl text-center p-5 text-gray-400 font-extrabold">My_Personal_Blogs</h1> */}
                     <div className=" flex flex-wrap justify-center gap-20">
@@ -99,7 +87,7 @@ export default function Home({copy,setCopy}){
                         })}
                     </div>
                 </div>
-            <Footer setCopy={setCopy}/>
+            <Footer/>
             <Modal isOpen={isOpen} closeModal={()=>setIsOpen(false)}>
                 <div>
                     <h1 className=" font-semibold text-2xl my-2 text-center">{displayCat.data?.title}</h1>
